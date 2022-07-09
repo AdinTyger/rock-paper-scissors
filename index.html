@@ -12,7 +12,7 @@
             choice = Math.floor(Math.random() * 3);
 
             play = options[choice];
-            console.log(play + ' computer')
+            console.log(play + ' computer');
             return play;
         };
 
@@ -21,25 +21,25 @@
 
         function playRound(playerSelection, computerSelection){
 
-            console.log(playerSelection)
+            console.log(playerSelection);
 
             if ((playerSelection === 'scissors') && (computerSelection === 'paper')) {
-                return 1
+                return 1;
                 
             }
             else if ((playerSelection === 'paper') && (computerSelection === 'rock')) {
-                return 1
+                return 1;
                 
             }
             else if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
-                return 1
+                return 1;
             }
             else if (playerSelection === computerSelection){
-                return 2
+                return 2;
 
             }
             else{
-                return 3
+                return 3;
 
             };
         };
@@ -55,10 +55,10 @@
 
 
         function game(computerSelection){
-            playerScore = 0
-            computerScore = 0
+            playerScore = 0;
+            computerScore = 0;
 
-            totalRounds = prompt('how many rounds to play')
+            totalRounds = prompt('how many rounds to play');
             
 
             for(let i = 0; i < totalRounds; i++){
@@ -66,7 +66,7 @@
 
                 let playerSelection = prompt('what do you play?').toLowerCase()
                 const computerSelection = computerPlay();
-                play = playRound(playerSelection, computerSelection)
+                play = playRound(playerSelection, computerSelection);
                 
                 if (play === 1){
                     
@@ -88,18 +88,18 @@
 
 
 
-            console.log(playerScore + ' Player score ')
-            console.log(computerScore + ' Computer score')
+            console.log(playerScore + ' Player score ');
+            console.log(computerScore + ' Computer score');
 
             if (playerScore > computerScore){
-                console.log('player wins')
+                console.log('player wins');
             }
             else if( playerScore < computerScore){
-                console.log('player wins')
+                console.log('player wins');
             }
             else{
-                console.log('player wins')
-            }
+                console.log('player wins');
+            };
                 
             
 
