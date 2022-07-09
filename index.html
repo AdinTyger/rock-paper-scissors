@@ -6,82 +6,99 @@
 </head>
 <body>
     <script>
-        function computerSelection(){
+        function computerPlay(){
             options = ['rock', 'paper', 'scissors'];
 
             choice = Math.floor(Math.random() * 3);
 
             play = options[choice];
-            
-            console.log(play + ' computer');
+            console.log(play + ' computer')
             return play;
         };
 
-        let playerSelection = prompt('what do you play?').toLowerCase();
+                
         
-        // console.log(playerSelection + ' player')
 
         function playRound(playerSelection, computerSelection){
 
+            console.log(playerSelection)
 
             if ((playerSelection === 'scissors') && (computerSelection === 'paper')) {
-                return 'you win'
+                return 1
                 
             }
             else if ((playerSelection === 'paper') && (computerSelection === 'rock')) {
-                return 'you win'
+                return 1
                 
             }
             else if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
-                return 'you win'
+                return 1
             }
             else if (playerSelection === computerSelection){
-                return 'you tie'
+                return 2
 
             }
             else{
-                return 'you lose'
+                return 3
+
             };
         };
 
 
+        // let playerSelection = prompt('what do you play?').toLowerCase();
+        
+
+        // console.log(playRound(playerSelection, computerSelection));
 
 
 
-        // console.log(playRound(playerSelection, computerSelection()));
 
 
-        function playGame(playerSelection){
+        function game(computerSelection){
             playerScore = 0
             computerScore = 0
 
+            totalRounds = prompt('how many rounds to play')
             
-            for (w = 0; w < 5; w++){
-                playRound();
-                if (playRound(computerSelection(), playerSelection ) === 'you win'){
-                    playerScore++
-                }
-                else if (playRound(computerSelection(), playerSelection ) === 'you lose'){
-                    computerScore++
-                };
+
+            for(let i = 0; i < totalRounds; i++){
 
 
-
+                let playerSelection = prompt('what do you play?').toLowerCase()
+                const computerSelection = computerPlay();
+                play = playRound(playerSelection, computerSelection)
                 
-
+                if (play === 1){
+                    
+                    playerScore++; 
+                    console.log ('win');
+                    
+                }
+                else if (play === 3){
+                    computerScore++;
+                    console.log ('lose');
+                    
+                }
+                else{
+                    console.log ('tie');
+                    
+                };
 
             };
 
-            return playerScore, computerScore
+
+
+            console.log(playerScore + ' Player score ')
+            console.log(computerScore + ' Computer score')
 
             if (playerScore > computerScore){
-                return 'player wins'
+                console.log('player wins')
             }
             else if( playerScore < computerScore){
-                return 'computer wins'
+                console.log('player wins')
             }
             else{
-                return 'total tie'
+                console.log('player wins')
             }
                 
             
@@ -89,7 +106,11 @@
         };
 
 
-        playGame(playerSelection)
+        game();
+
+        // console.log(playRound())
+
+
     </script>
 
 
