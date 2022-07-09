@@ -6,18 +6,90 @@
 </head>
 <body>
     <script>
-        function computerPlay(){
-            options = ['Rock', 'Paper', 'Scissors'];
+        function computerSelection(){
+            options = ['rock', 'paper', 'scissors'];
 
             choice = Math.floor(Math.random() * 3);
 
             play = options[choice];
+            
+            console.log(play + ' computer');
+            return play;
+        };
 
+        let playerSelection = prompt('what do you play?').toLowerCase();
+        
+        // console.log(playerSelection + ' player')
+
+        function playRound(playerSelection, computerSelection){
+
+
+            if ((playerSelection === 'scissors') && (computerSelection === 'paper')) {
+                return 'you win'
+                
+            }
+            else if ((playerSelection === 'paper') && (computerSelection === 'rock')) {
+                return 'you win'
+                
+            }
+            else if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
+                return 'you win'
+            }
+            else if (playerSelection === computerSelection){
+                return 'you tie'
+
+            }
+            else{
+                return 'you lose'
+            };
+        };
+
+
+
+
+
+        // console.log(playRound(playerSelection, computerSelection()));
+
+
+        function playGame(playerSelection){
+            playerScore = 0
+            computerScore = 0
+
+            
+            for (w = 0; w < 5; w++){
+                playRound();
+                if (playRound(computerSelection(), playerSelection ) === 'you win'){
+                    playerScore++
+                }
+                else if (playRound(computerSelection(), playerSelection ) === 'you lose'){
+                    computerScore++
+                };
+
+
+
+                
+
+
+            };
+
+            return playerScore, computerScore
+
+            if (playerScore > computerScore){
+                return 'player wins'
+            }
+            else if( playerScore < computerScore){
+                return 'computer wins'
+            }
+            else{
+                return 'total tie'
+            }
+                
+            
 
         };
 
 
-        computerPlay();
+        playGame(playerSelection)
     </script>
 
 
