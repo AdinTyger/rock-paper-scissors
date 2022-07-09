@@ -6,6 +6,8 @@
 </head>
 <body>
     <script>
+        
+        // randomly  chooses from rock, paper, or scissors and outputs the result//
         function computerPlay(){
             options = ['rock', 'paper', 'scissors'];
 
@@ -18,7 +20,9 @@
 
                 
         
-
+        // takes in the palyer selction and computer selection and checks to see if the result is a win or loss
+        // and outputs the corresponding result
+        
         function playRound(playerSelection, computerSelection){
 
             console.log(playerSelection);
@@ -53,7 +57,7 @@
 
 
 
-
+        // holds the for loop that itterates through i number of rounds that the player specifies 
         function game(computerSelection){
             playerScore = 0;
             computerScore = 0;
@@ -67,7 +71,7 @@
                 let playerSelection = prompt('what do you play?').toLowerCase()
                 const computerSelection = computerPlay();
                 play = playRound(playerSelection, computerSelection);
-                
+                // checks the result of playRound and adds score to player or computer accordingly 
                 if (play === 1){
                     
                     playerScore++; 
@@ -91,6 +95,7 @@
             console.log(playerScore + ' Player score ');
             console.log(computerScore + ' Computer score');
 
+            // checks whos score is higher and outputs the result
             if (playerScore > computerScore){
                 console.log('player wins');
             }
